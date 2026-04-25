@@ -1,3 +1,128 @@
-body {
+:root {
+    --branco: #FFFFFF;
+    --cinza-claro: #F4F4F4;
+    --laranja: #F39C12; 
+    --texto: #4D4D4D;
+    --texto-suave: #777;
+    --borda: #E0E0E0;
+    --transicao: 0.3s ease;
+    --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--cinza-claro);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: var(--branco);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-icon {
+    color: var(--laranja);
+    font-size: 1.4rem;
+    transition: opacity var(--transicao);
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+}
+
+.form-card {
+    background-color: var(--branco);
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background-color: #FAFAFA;
+}
+
+.form-group input:focus {
+    border-color: var(--laranja);
+    outline: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: var(--laranja);
+    color: var(--branco);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--borda);
+    color: var(--texto-suave);
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
 }
