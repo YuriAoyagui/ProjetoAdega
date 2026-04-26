@@ -1,3 +1,110 @@
-body {
-    margin: 0;
+:root {
+    --branco: #FFFFFF;
+    --laranja: #F39C12; 
+    --texto: #4D4D4D;
+    --transicao: 0.3s ease;
+    --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.nav-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--texto);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn-novo-nav {
+    background-color: var(--laranja);
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: var(--transicao);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-novo-nav:hover {
+    filter: brightness(0.9);
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.tabela-container {
+    background-color: var(--branco);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-subtle);
+    overflow-x: auto; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    border-bottom: 2px solid var(--laranja);
+    padding: 15px 12px;
+    color: var(--texto);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+    font-size: 14px;
+}
+
+.acoes-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-acao {
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: var(--transicao);
+}
+
+.btn-acao.edit {
+    background-color: var(--laranja);
+    color: white;
+}
+
+.btn-acao.delete {
+    background-color: #fff;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+.btn-acao.delete:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-title { display: none; } 
 }
