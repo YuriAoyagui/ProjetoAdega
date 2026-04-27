@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/listar.css">
+    <title>Histórico de Entrada - Adega</title>
 </head>
 <body>
-    
+    <nav class="navbar">
+        <a href="/" class="nav-icon" title="Voltar ao Início">
+            <i class="fas fa-home"></i>
+        </a>
+        <h1 class="nav-title">🕒 HISTÓRICO DIÁRIO</h1>
+        <div style="width: 40px;"></div> 
+    </nav>
+
+    <div class="container">
+        <p style="margin-bottom: 20px; color: #666; font-size: 0.9rem;">
+            <i class="fas fa-calendar-day"></i> Itens que foram registrados hoje:
+        </p>
+        
+        <main class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Safra/Ano</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-historico">
+                    </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="/js/historico.js"></script>
 </body>
 </html>
