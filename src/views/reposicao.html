@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/listar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Alerta de Reposição - Adega</title>
 </head>
 <body>
-    
+     <nav class="navbar">
+        <a href="/" class="nav-icon" title="Voltar ao Início">
+            <i class="fas fa-home"></i>
+        </a>
+        <h1 class="nav-title">⚠️ ALERTA DE REPOSIÇÃO</h1>
+        <div style="width: 40px;"></div> 
+    </nav>
+
+    <div class="container">
+        <p style="margin-bottom: 20px; color: #666; font-size: 0.9rem;">
+            <i class="fas fa-info-circle"></i> Itens com estoque crítico (5 unidades ou menos):
+        </p>
+        
+        <main class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Safra/Ano</th>
+                        <th>Quantidade Atual</th>
+                        <th>Preço Unitário</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-reposicao">
+                    </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="/js/reposicao.js"></script>
 </body>
 </html>
