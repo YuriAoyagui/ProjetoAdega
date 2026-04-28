@@ -11,6 +11,15 @@ const produtoController = {
                 </script>
             `);
         }
+        else if (Number(safra) <= 0) {
+            return res.status(400).send(`
+                <script>
+                    alert('Erro: A safra não podem ser negativos.');
+                    window.history.back();
+                </script>
+            `);
+        }
+       
         const sql = "INSERT INTO produtos (nome, categoria, safra, quantidade, preco) VALUES (?, ?, ?, ?, ?)";
         
         db.query(sql, [nome, categoria, safra || null, quantidade, preco], (err, result) => {
@@ -45,6 +54,14 @@ const produtoController = {
             return res.status(400).send(`
                 <script>
                     alert('Erro: Quantidade e Preço não podem ser negativos.');
+                    window.history.back();
+                </script>
+            `);
+        }
+        else if (Number(safra) <= 0) {
+            return res.status(400).send(`
+                <script>
+                    alert('Erro: A safra não podem ser negativos.');
                     window.history.back();
                 </script>
             `);
