@@ -3,6 +3,14 @@ const db = require('../config/db');
 const produtoController = {
     cadastrar: (req, res) => {
         const { nome, categoria, safra, quantidade, preco } = req.body;
+        if (Number(quantidade) <= 0 || Number(preco) <= 0) {
+            return res.status(400).send(`
+                <script>
+                    alert('Erro: Quantidade e Preço não podem ser negativos.');
+                    window.history.back();
+                </script>
+            `);
+        }
         const sql = "INSERT INTO produtos (nome, categoria, safra, quantidade, preco) VALUES (?, ?, ?, ?, ?)";
         
         db.query(sql, [nome, categoria, safra || null, quantidade, preco], (err, result) => {
@@ -33,6 +41,14 @@ const produtoController = {
 
     atualizar: (req, res) => {
         const { nome, categoria, safra, quantidade, preco } = req.body;
+        if (Number(quantidade) <= 0 || Number(preco) <= 0) {
+            return res.status(400).send(`
+                <script>
+                    alert('Erro: Quantidade e Preço não podem ser negativos.');
+                    window.history.back();
+                </script>
+            `);
+        }
         const sql = "UPDATE produtos SET nome=?, categoria=?, safra=?, quantidade=?, preco=? WHERE id=?";
         
         db.query(sql, [nome, categoria, safra, quantidade, preco, req.params.id], (err, result) => {
