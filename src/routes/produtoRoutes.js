@@ -22,8 +22,4 @@ router.get('/api/produtos/:id', produtoController.buscarPorId);
 router.get('/api/historico-hoje', produtoController.historicoHoje);
 router.get('/api/relatorio-mensal', produtoController.relatorioMensal);
 
-router.get('/logout', (req, res) => {
-    res.send("<script>alert('Sessão encerrada!'); window.location.href='/';</script>");
-});
-
 module.exports = router;
