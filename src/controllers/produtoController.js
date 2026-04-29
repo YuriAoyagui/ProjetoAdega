@@ -27,7 +27,7 @@ const produtoController = {
                 if (err.code === 'ER_DUP_ENTRY') {
                     return res.status(400).send(`
                         <script>
-                            alert('Produto já cadastrado!');
+                            alert('Produto já cadastrado, Tente novamente!');
                             window.history.back();
                         </script>
                     `);
