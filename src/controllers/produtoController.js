@@ -24,8 +24,17 @@ const produtoController = {
         
         db.query(sql, [nome, categoria, safra || null, quantidade, preco], (err, result) => {
             if (err) {
-                console.error("Erro ao cadastrar:", err);
-                return res.status(500).send("Erro ao cadastrar no banco de dados.");
+                if (err.code === 'ER_DUP_ENTRY') {
+                    return res.status(400).send(`
+                        <script>
+                            alert('Produto já cadastrado!');
+                            window.history.back();
+                        </script>
+                    `);
+                }
+        
+                console.error(err);
+                return res.status(500).send("Erro ao cadastrar.");
             }
             res.send("<script>alert('Produto cadastrado com sucesso!'); window.location.href='/listar';</script>");
         });
