@@ -6,7 +6,7 @@ const produtoController = {
         if (Number(quantidade) <= 0 || Number(preco) <= 0) {
             return res.status(400).send(`
                 <script>
-                    alert('Erro: Quantidade e Preço não podem ser negativos.');
+                    alert('Erro: quantidade e preço não podem ser zero ou negativos.');
                     window.history.back();
                 </script>
             `);
